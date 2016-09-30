@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Shaun D Jackman">
+  <meta name="dcterms.date" content="2016-06-30">
+  <title>Assembling Genomes Using Large Molecule Sequencing</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Assembling Genomes Using Large Molecule Sequencing</h1>
+  <h2 class="author">Shaun D Jackman</h2>
+  <h3 class="date">2016-06-30</h3>
+</section>
+
+<section id="assembling-genomes-using-large-molecule-sequencing" class="slide level2">
+<h1>Assembling Genomes Using Large Molecule Sequencing</h1>
+<p>Shaun Jackman <a href="http://twitter.com/sjackman">@sjackman</a></p>
+<p>2016-06-30</p>
+<p><a href="http://creativecommons.org/licenses/by/4.0/"><img src="images/cc-by.png" alt="Creative Commons Attribution License" /></a></p>
+<p><a href="https://github.com/sjackman/giab-slides">Fork me on GitHub!</a></p>
+</section>
+<section id="shaun-jackman" class="slide level2">
+<h1>Shaun Jackman</h1>
+<p><a href="http://bcgsc.ca">BC Cancer Agency Genome Sciences Centre</a><br />
+Vancouver, Canada<br />
+<a href="http://twitter.com/sjackman">@sjackman</a> | <a href="https://github.com/sjackman">github.com/sjackman</a> | <a href="http://sjackman.ca">sjackman.ca</a></p>
+<figure>
+<img src="images/sjackman.jpg" />
+</figure>
+</section>
+<section><section id="sequencing-technologies" class="titleslide slide level1"><h1>Sequencing Technologies</h1></section><section id="paired-end-sequencing" class="slide level2">
+<h1>Paired-end Sequencing</h1>
+<ul>
+<li>40 kbp Fosmid</li>
+<li>200 kbp BAC</li>
+<li>800 bp Illumina paired-end</li>
+<li>6 kbp Illumina mate-pair</li>
+</ul>
+</section><section id="large-molecule-sequencing" class="slide level2">
+<h1>Large Molecule Sequencing</h1>
+<ul>
+<li>PacBio
+<ul>
+<li>up to 100 kbp reads</li>
+</ul></li>
+<li>Oxford Nanopore
+<ul>
+<li>up to 500 kbp reads</li>
+</ul></li>
+</ul>
+</section><section id="new-technologies" class="slide level2">
+<h1>New Technologies</h1>
+<ul>
+<li>10x Genomics Chromium Linked Reads
+<ul>
+<li>up to 200 kbp molecules</li>
+</ul></li>
+<li>BioNano Genomics Irys
+<ul>
+<li>up to 1000 kbp molecules</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="assemble-long-reads" class="titleslide slide level1"><h1>Assemble Long Reads</h1></section><section id="long-read-assemblers" class="slide level2">
+<h1>Long Read Assemblers</h1>
+<ul>
+<li><a href="http://canu.readthedocs.io/en/latest/">Canu</a>: PacBio or Nanopore</li>
+<li><a href="https://github.com/PacificBiosciences/FALCON">Falcon</a>: PacBio</li>
+<li><a href="https://github.com/lh3/miniasm">Miniasm</a>: PacBio or Nanopore</li>
+<li><a href="http://bioinf.spbau.ru/spades">SPAdes</a>: PacBio or Nanopore with Illumina</li>
+</ul>
+</section><section id="polish" class="slide level2">
+<h1>Polish</h1>
+<ul>
+<li><a href="https://github.com/jts/nanopolish">Nanopolish</a> for Nanopore</li>
+<li><a href="https://github.com/PacificBiosciences/pbdagcon">Pbdagcon</a> for PacBio</li>
+<li><a href="http://www.broadinstitute.org/software/pilon/%5D">Pilon</a> for Illumina</li>
+</ul>
+</section></section>
+<section><section id="x-genomics-chromium" class="titleslide slide level1"><h1>10x Genomics Chromium</h1></section><section class="slide level2">
+
+<figure>
+<img src="images/10xgenomics.png" alt="10x Genomics Chromium Linked Reads" /><figcaption>10x Genomics Chromium Linked Reads</figcaption>
+</figure>
+</section><section id="assemble-chromium" class="slide level2">
+<h1>Assemble Chromium</h1>
+<ul>
+<li><a href="http://support.10xgenomics.com/de-novo-assembly/software/overview/welcome">Supernova</a></li>
+<li><a href="https://github.com/bcgsc/abyss">ABySS</a> for contigs, scaffolding is under way</li>
+</ul>
+</section><section id="scaffold-with-chromium" class="slide level2">
+<h1>Scaffold with Chromium</h1>
+<ul>
+<li><a href="http://krishna.gs.washington.edu/software.html">Fragscaff</a> <small>(intended for an older technology)</small></li>
+<li><a href="https://github.com/kuleshov/architect">Architect</a></li>
+<li>BCGSC <a href="https://github.com/bcgsc/arcs">ARCS</a> with <a href="https://github.com/warrenlr/LINKS">LINKS</a></li>
+</ul>
+</section></section>
+<section><section id="bionano-genomics-irys" class="titleslide slide level1"><h1>BioNano Genomics Irys</h1></section><section class="slide level2">
+
+<figure>
+<img src="images/bionano.jpg" alt="BioNano Genomics Irys" /><figcaption>BioNano Genomics Irys</figcaption>
+</figure>
+</section><section id="scaffold-with-bionano" class="slide level2">
+<h1>Scaffold with BioNano</h1>
+<ul>
+<li><a href="http://bionanogenomics.com/wp-content/uploads/2016/04/30073-Rev-A-Hybrid-Scaffolding-Theory-of-Operations.pdf">HybridScaffold</a></li>
+</ul>
+</section></section>
+<section><section id="sitka-spruce-picea-sitchensis" class="titleslide slide level1"><h1>Sitka Spruce <em>Picea sitchensis</em></h1></section><section id="sitka-spruce-mitochondrion" class="slide level2">
+<h1>Sitka Spruce Mitochondrion</h1>
+<h3 id="aim">Aim</h3>
+<p>Assemble the Sitka spruce mitochondrion into a single scaffold* using 10x Chromium data.</p>
+<p>* if it has a single chromosome</p>
+</section><section id="method" class="slide level2">
+<h1>Method</h1>
+<ul>
+<li>Align Sitka spruce reads to white spruce organelles</li>
+<li>Filter out mismapped nuclear reads (AS &lt; 40)</li>
+<li>Identify 10x barcodes that contain at least one mitochondrial molecule
+<ul>
+<li>Four properly-paired mitochondrial reads</li>
+</ul></li>
+<li>Select all the reads of these mitochondrial barcodes</li>
+<li>Assemble with <a href="https://github.com/bcgsc/abyss">ABySS</a></li>
+<li>Scaffold with <a href="https://github.com/bcgsc/arcs">ARCS</a> and <a href="https://github.com/warrenlr/LINKS">LINKS</a></li>
+<li>Fill gaps with <a href="https://github.com/bcgsc/abyss/tree/master/Sealer">Sealer</a></li>
+<li>Annotate genes with <a href="http://www.yandell-lab.org/software/maker.html">MAKER</a></li>
+<li>Submit to NCBI GenBank</li>
+</ul>
+</section></section>
+<section><section id="fin" class="titleslide slide level1"><h1>fin</h1></section><section id="links" class="slide level2">
+<h1>Links</h1>
+<p><a href="https://github.com/bcgsc/abyss">ABySS</a> | <a href="https://github.com/bcgsc/arcs">ARCS</a> | <a href="https://github.com/kuleshov/architect">Architect</a> | <a href="http://canu.readthedocs.io/en/latest/">Canu</a> | <a href="https://github.com/PacificBiosciences/FALCON">Falcon</a> | <a href="http://krishna.gs.washington.edu/software.html">Fragscaff</a> | <a href="http://bionanogenomics.com/wp-content/uploads/2016/04/30073-Rev-A-Hybrid-Scaffolding-Theory-of-Operations.pdf">HybridScaffold</a> | <a href="https://github.com/warrenlr/LINKS">LINKS</a> | <a href="http://www.yandell-lab.org/software/maker.html">MAKER</a> | <a href="https://github.com/lh3/miniasm">Miniasm</a> | <a href="https://github.com/jts/nanopolish">Nanopolish</a> | <a href="https://github.com/PacificBiosciences/pbdagcon">Pbdagcon</a> | <a href="http://www.broadinstitute.org/software/pilon/%5D">Pilon</a> | <a href="https://github.com/bcgsc/abyss/tree/master/Sealer">Sealer</a> | <a href="http://bioinf.spbau.ru/spades">SPAdes</a> | <a href="http://support.10xgenomics.com/de-novo-assembly/software/overview/welcome">Supernova</a></p>
+</section><section id="shaun-jackman-1" class="slide level2">
+<h1>Shaun Jackman</h1>
+<p><a href="http://bcgsc.ca">BC Cancer Agency Genome Sciences Centre</a><br />
+Vancouver, Canada<br />
+<a href="http://twitter.com/sjackman">@sjackman</a> | <a href="https://github.com/sjackman">github.com/sjackman</a> | <a href="http://sjackman.ca">sjackman.ca</a></p>
+<figure>
+<img src="images/sjackman.jpg" />
+</figure>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
